@@ -3,6 +3,7 @@ import classes from './User.module.css'
 import Button from '../UI/Button'
 import { useState } from 'react'
 import ErrorModal from '../UI/ErrorModal'
+import {Fragment} from 'react'
 
 const User = (props) => {
 
@@ -42,7 +43,7 @@ const User = (props) => {
     }
 
     return (
-        <div>
+        <Fragment>
             {error && <ErrorModal title={error.title} message={error.message} onConfirm={errorHandler}></ErrorModal>}
             <Card className={classes.input}>
                 <form onSubmit={addUserHandler}>
@@ -53,7 +54,7 @@ const User = (props) => {
                     <Button type="submit">Add USer</Button>
                 </form>
             </Card>
-        </div>
+        </Fragment>
     )
 }
 
